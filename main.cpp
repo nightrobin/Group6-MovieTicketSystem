@@ -81,11 +81,11 @@ int main() {
 
                             admn.registerUser();
 
-                            cout << "===================================" << endl;
-                            cout << endl;
 
                             while (userchoice != 0){
 
+                            cout << "===================================" << endl;
+                            cout << endl;
                             cout << "Welcome! User" << endl;
                             cout << "\nWhat do you want to do? "<< endl;
                             cout << "\n [1] View List of Theaters & Venues" ;
