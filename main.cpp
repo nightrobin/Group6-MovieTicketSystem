@@ -2,169 +2,143 @@
 #include<fstream>
 #include <string>
 
+#include "ADMINCONTROL.h"
+
 using namespace std;
 
 int main() {
 
-	label:
+    ADMINCONTROL admn;
+
+    int choice;
+
+    cout << "MOVIE TICKET SYSTEM" << endl;
+    cout << endl;
 	cout << "====================================" << endl;
 	cout << endl;
 	cout << "[1] Log in as Admin" << endl;
-	cout << "[2] Log in as User" << endl;
 	cout << endl;
 	cout << "====================================" << endl;
 	cout << endl;
-	int choice;
 
 	cout << "Enter Command Number: ";
 	cin >> choice;
-	system("cls");
+	cout << endl;
 
 	string AdminUser;
 	string AdminPass;
-	string UserUser;
-	string UserPass;
-	string
-    command,
-    name, password,
-    inName, inPassword,
-    registerName, registerPassword;
-	int log, adminchoice;
+	int adminchoice = -1;
+	int userchoice;
 
 	switch(choice){
 		case 1:
-		    system("cls");
-			cout << "----------------------------------" << endl;
+
+			cout << "===================================" << endl;
 			cout << endl;
-			cout << "Enter your username and password" << endl;
+			cout << "Enter your Username and Password" << endl;
 
 			cout << "\nUsername: ";
 			cin >> AdminUser;
 			cout << "Password: ";
 			cin >> AdminPass;
+			cout << endl;
+
 
 
 			if (AdminUser == "admin" && AdminPass == "admin") {
-                system("cls");
-				cout << "===================================" << endl;
-				cout << endl;
-				cout << "Welcome! Admin" << endl;
-				 cout << "\nWhat do you want to do? "<< endl;
-            cout << "\n [1] Add List of Theaters & Venues" ;
-            cout << "\n [2] Add Info for Movie Schedule " ;
-            cout << "\n [3] Add Price of Ticket ";
-            cout << "\n [4] Add Seating Availability";
-            cout << "\n [5] Add Ticket Availability";
-            cout << "\n Enter command no. : ";
-            cin >> adminchoice;
+
+				while (adminchoice != 0){
+
+                    cout << "===================================" << endl;
+                    cout << endl;
+                    cout << "Welcome! Admin" << endl;
+                    cout << "\nWhat do you want to do? "<< endl;
+                    cout << "\n [1] Add List of Theaters & Venues" ;
+                    cout << "\n [2] Add Movie Info and Schedule" ;
+                    cout << "\n [3] Login as User" ;
+                    cout << "\n [0] Logout" ;
+                    cout << "\n\n Enter command Number: ";
+                    cin >> adminchoice;
+                    cout <<  "\n";
+
+                    cin.clear();
+                    fflush(stdin);
+
+                    switch (adminchoice){
+
+                        case 1:
+                            admn.addVenue();
+                            break;
+
+                        case 2:
+                            admn.movieSchedule();
+                            break;
+
+                        case 3:
+                            cout << "===================================" << endl;
+                            cout << endl;
+                            cout << "Register before logging in" << endl;
+
+                            admn.registerUser();
+
+                            cout << "===================================" << endl;
+                            cout << endl;
+
+                            while (userchoice != 0){
+
+                            cout << "Welcome! User" << endl;
+                            cout << "\nWhat do you want to do? "<< endl;
+                            cout << "\n [1] View List of Theaters & Venues" ;
+                            cout << "\n [2] View Movie Info and Schedules" ;
+                            cout << "\n [0] Logout" ;
+                            cout << "\n\n Enter command Number: ";
+                            cin >> userchoice;
+                            cout <<  "\n";
+
+                            cin.clear();
+                            fflush(stdin);
+
+                                switch (userchoice){
+
+                                case 1:
+                                    admn.viewVenue();
+                                    break;
+
+                                case 2:
+                                    admn.viewMovieSchedule();
+                                    break;
+
+                                case 0:
+                                    cout << "===================================" << endl;
+                                    cout << endl;
+                                    cout << "Thank you for using our system!\n";
+                                    break;
+                                }
+
+                        }
 
 
-   switch (adminchoice)
-   {
+                        case 0:
+                            cout << "===================================" << endl;
+                            cout << endl;
+                            cout << "Thank you for using our system!\n";
+                            break;
 
-   case 1:
-       string thrsVenues ;
-       cout << "Add List of Theaters and Venues" << endl;
-       cout << "You're now Adding list of Theaters / Venues... ";
-       cin >> thrsVenues ;
+                    }
 
-   }
-
-
-			} else {
-				cout << "----------------------------------" << endl;
-				cout << endl;
-				cout << "Incorrect Username or Password";
-
-
-
-			}
-			break;
-		case 2:
-		    system("cls");
-			cout << "----------------------------------" << endl;
-			cout << endl;
-			cout << "You choose to login as a user" << endl;
-			 while (1)
-    		{
-
-			cout << endl;
-			 cout<<"(register/exit/login)\n"
-            	<<"Command: ";
-      			cin >> command;
-			 if (command=="exit")
-        {
-            goto label;
-
-        }
-        if (command=="register")
-        {
-            ofstream g("registration.txt");
-            if (!g.is_open())
-            {
-                cout<<"could not open file\n";
-                return 0;
-            }
-            cout << "----------------------------------" << endl;
-            cout<<"\n"
-                <<"New Username: ";
-            cin >> registerName;
-            cout<<"New Password: ";
-            cin >> registerPassword;
-            g<<registerName;
-            g<<'\n';
-            g<<registerPassword;
-            g.close();
-
-            system("cls");
-        }
-        if (command=="login")
-        {
-
-            ifstream f("registration.txt");
-            if (!f.is_open())
-            {
-                cout<<"could not open file\n";
-                return 0;
-            }
-            getline(f, name, '\n');
-            getline(f, password, '\n');
-            f.close();
-
-            while (1)
-            {
-                cout << "----------------------------------" << endl;
-                cout<<"\n"
-                    <<"Enter Username: ";
-                cin >> inName;
-                cout<<"Enter Password: ";
-                cin >> inPassword;
-
-                if (inName==name && inPassword==password)
-                {
-                    system("cls");
-                	cout << "----------------------------------" << endl;
-                    cout<<"Login Successful\n"
-                        <<"Welcome, "
-                        <<inName;
-                    break;
-                    system("cls");
                 }
-                cout << "----------------------------------" << endl;
+            }
+
+            else {
+
+                cout << "Incorrect Username or Password";
                 cout << endl;
-                cout<<"incorrect name or password\n";
+                exit (0);
 
             }
-            //now do something about the account
-        }
-        cout<<"\n\n";
-       }
-    return 1;
 
+			break;
 
-
+	}
 
 }
-}
-
-
