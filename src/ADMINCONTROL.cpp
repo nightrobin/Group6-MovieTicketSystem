@@ -21,7 +21,7 @@ void ADMINCONTROL :: addVenue(){
         string name;
 
         cout << "Name of Theater/Venue: ";
-        cin >> name;
+        getline(cin, name);
 
         cout << endl;
 
@@ -35,7 +35,7 @@ void ADMINCONTROL :: addVenue(){
 
 void ADMINCONTROL :: movieSchedule(){
 
-    cout << "Use ' _ ' to indicate spaces on Movie titles\n\n";
+    cout <<"======Enter your desired Movie======\n\n";
 
     for (int ctr = 0; ctr < movies; ctr++){
 
@@ -44,7 +44,7 @@ void ADMINCONTROL :: movieSchedule(){
         string time;
 
         cout << "Name of Movie: ";
-        cin >> movie;
+        getline(cin, movie);
 
         cout << endl;
 
