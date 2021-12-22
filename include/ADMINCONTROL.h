@@ -26,6 +26,7 @@ class ADMINCONTROL
 
         void addVenue();
         void movieSchedule();
+        void modifyMovie(int ctr);
         void registerUser();
         void viewVenue();
         void viewMovieSchedule();

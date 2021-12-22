@@ -14,11 +14,11 @@ int main() {
 
     cout << "MOVIE TICKET SYSTEM" << endl;
     cout << endl;
-	cout << "====================================" << endl;
+	cout << "===================================" << endl;
 	cout << endl;
-	cout << "[1] Log in as Admin" << endl;
+	cout << "[1] START" << endl;
 	cout << endl;
-	cout << "====================================" << endl;
+	cout << "===================================" << endl;
 	cout << endl;
 
 	cout << "Enter Command Number: ";
@@ -29,6 +29,7 @@ int main() {
 	string AdminPass;
 	int adminchoice = -1;
 	int userchoice;
+	int ctr;
 
 	switch(choice){
 		case 1:
@@ -55,7 +56,10 @@ int main() {
                     cout << "\nWhat do you want to do? "<< endl;
                     cout << "\n [1] Add List of Theaters & Venues" ;
                     cout << "\n [2] Add Movie Info and Schedule" ;
-                    cout << "\n [3] Login as User" ;
+                    cout << "\n [3] View List of Theaters & Venues" ;
+                    cout << "\n [4] View Movie Info and Schedules" ;
+                    cout << "\n [5] Modify Movie Info" ;
+                    cout << "\n [6] Login as User" ;
                     cout << "\n [0] Logout" ;
                     cout << "\n\n Enter command Number: ";
                     cin >> adminchoice;
@@ -75,6 +79,27 @@ int main() {
                             break;
 
                         case 3:
+                            admn.viewVenue();
+                            break;
+
+                        case 4:
+                            admn.viewMovieSchedule();
+                            break;
+
+                        case 5:
+                            cout << "===================================" << endl;
+
+                            cout << "\nEnter Movie ID to modify its Info: ";
+                            cin >> ctr;
+
+                            cin.clear();
+                            fflush(stdin);
+
+                            admn.modifyMovie(ctr);
+
+                            break;
+
+                        case 6:
                             cout << "===================================" << endl;
                             cout << endl;
                             cout << "Register before logging in" << endl;

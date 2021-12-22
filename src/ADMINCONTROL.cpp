@@ -16,9 +16,13 @@ ADMINCONTROL::~ADMINCONTROL()
 
 void ADMINCONTROL :: addVenue(){
 
+    cout <<"========= Enter Venue Name =========\n\n";
+
     for (int ctr = 0; ctr < venues; ctr++){
 
         string name;
+
+        cout << endl;
 
         cout << "Name of Theater/Venue: ";
         getline(cin, name);
@@ -35,13 +39,13 @@ void ADMINCONTROL :: addVenue(){
 
 void ADMINCONTROL :: movieSchedule(){
 
-    cout <<"======Enter your desired Movie======\n\n";
+    cout <<"===== Enter Movie Information =====\n\n";
 
     for (int ctr = 0; ctr < movies; ctr++){
 
         string movie;
-        string price;
         string time;
+        string price;
 
         cout << "Name of Movie: ";
         getline(cin, movie);
@@ -49,14 +53,12 @@ void ADMINCONTROL :: movieSchedule(){
         cout << endl;
 
         cout << "Available Time: ";
-        cin >> time;
+        getline (cin, time);
 
         cout << endl;
 
         cout << "Price: ";
         cin >> price;
-
-        cout << endl;
 
         film [ctr].movieName = movie;
         clock[ctr].movieTime = time;
@@ -66,6 +68,31 @@ void ADMINCONTROL :: movieSchedule(){
         fflush(stdin);
 
     }
+
+}
+
+void ADMINCONTROL :: modifyMovie(int ctr){
+
+    cout << "Name of Movie: " << film [ctr].movieName << endl;
+    cout << "Modified Name of Movie: ";
+    getline (cin, film [ctr].movieName);
+
+    cout << endl;
+
+    cout << "Available Time: " << clock[ctr].movieTime << endl;
+    cout << "Modified Time: ";
+    getline (cin, clock[ctr].movieTime);
+
+    cout << endl;
+
+    cout << "Price: " << film [ctr].moviePrice << endl;
+    cout << "Modified Price: ";
+    cin >> film [ctr].moviePrice;
+
+    cout << endl;
+
+    cin.clear();
+    fflush(stdin);
 
 }
 
@@ -88,7 +115,7 @@ void ADMINCONTROL :: registerUser(){
 
     cout << "===================================" << endl;
     cout << endl;
-    cout << "You may now Log in " << user << endl;
+    cout << "You may now Log in" << user << endl;
     cout << endl;
 
     cout << "Username: ";
@@ -136,6 +163,7 @@ void ADMINCONTROL :: viewMovieSchedule(){
     cout << endl;
     cout << "SCHEDULES\n\n";
 
+    cout << "Movie ID: 0" << endl;
     cout << "Title: ";
     cout << film [0].movieName << endl;
     cout << "Time: ";
@@ -145,6 +173,7 @@ void ADMINCONTROL :: viewMovieSchedule(){
     cout << endl;
     cout << endl;
 
+    cout << "Movie ID: 1" << endl;
     cout << "Title: ";
     cout << film [1].movieName << endl;
     cout << "Time: ";
@@ -154,6 +183,7 @@ void ADMINCONTROL :: viewMovieSchedule(){
     cout << endl;
     cout << endl;
 
+    cout << "Movie ID: 2" << endl;
     cout << "Title: ";
     cout << film [2].movieName << endl;
     cout << "Time: ";
@@ -163,6 +193,7 @@ void ADMINCONTROL :: viewMovieSchedule(){
     cout << endl;
     cout << endl;
 
+    cout << "Movie ID: 3" << endl;
     cout << "Title: ";
     cout << film [3].movieName << endl;
     cout << "Time: ";
@@ -172,6 +203,7 @@ void ADMINCONTROL :: viewMovieSchedule(){
     cout << endl;
     cout << endl;
 
+    cout << "Movie ID: 4" << endl;
     cout << "Title: ";
     cout << film [4].movieName << endl;
     cout << "Time: ";
