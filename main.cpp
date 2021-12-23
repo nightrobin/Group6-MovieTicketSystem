@@ -36,7 +36,7 @@ int main() {
 
 			cout << "===================================" << endl;
 			cout << endl;
-			cout << "Enter your Username and Password" << endl;
+			cout << "Enter the Admin's default Username and Password" << endl;
 
 			cout << "\nUsername: ";
 			cin >> AdminUser;
