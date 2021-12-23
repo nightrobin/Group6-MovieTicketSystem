@@ -30,6 +30,7 @@ class ADMINCONTROL
         void registerUser();
         void viewVenue();
         void viewMovieSchedule();
+        void buyTicket();
 
 
     protected:

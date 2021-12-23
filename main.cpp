@@ -36,7 +36,11 @@ int main() {
 
 			cout << "===================================" << endl;
 			cout << endl;
+<<<<<<< Updated upstream
 			cout << "Enter the Admin's default Username and Password" << endl;
+=======
+			cout << "Enter Default Admin Username and Password" << endl;
+>>>>>>> Stashed changes
 
 			cout << "\nUsername: ";
 			cin >> AdminUser;
@@ -55,7 +59,7 @@ int main() {
                     cout << "Welcome! Admin" << endl;
                     cout << "\nWhat do you want to do? "<< endl;
                     cout << "\n [1] Add List of Theaters & Venues" ;
-                    cout << "\n [2] Add Movie Info and Schedule" ;
+                    cout << "\n [2] Add Movie Information and Schedule" ;
                     cout << "\n [3] View List of Theaters & Venues" ;
                     cout << "\n [4] View Movie Info and Schedules" ;
                     cout << "\n [5] Modify Movie Info" ;
@@ -89,8 +93,9 @@ int main() {
                         case 5:
                             cout << "===================================" << endl;
 
-                            cout << "\nEnter Movie ID to modify its Info: ";
+                            cout << "\nEnter Movie ID to modify its Information: ";
                             cin >> ctr;
+                            cout << endl;
 
                             cin.clear();
                             fflush(stdin);
@@ -115,6 +120,7 @@ int main() {
                             cout << "\nWhat do you want to do? "<< endl;
                             cout << "\n [1] View List of Theaters & Venues" ;
                             cout << "\n [2] View Movie Info and Schedules" ;
+                            cout << "\n [3] Buy Ticket" ;
                             cout << "\n [0] Logout" ;
                             cout << "\n\n Enter command Number: ";
                             cin >> userchoice;
@@ -131,6 +137,10 @@ int main() {
 
                                 case 2:
                                     admn.viewMovieSchedule();
+                                    break;
+
+                                case 3:
+                                    admn.buyTicket();
                                     break;
 
                                 case 0:
