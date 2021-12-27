@@ -16,7 +16,9 @@ int main() {
     cout << endl;
 	cout << "===================================" << endl;
 	cout << endl;
-	cout << "[1] START" << endl;
+	cout << "[1] Login as Admin" << endl;
+	cout << endl;
+	cout << "[2] Login as User" << endl;
 	cout << endl;
 	cout << "===================================" << endl;
 	cout << endl;
@@ -36,12 +38,8 @@ int main() {
 
 			cout << "===================================" << endl;
 			cout << endl;
-<<<<<<< Updated upstream
-			cout << "Enter the Admin's default Username and Password" << endl;
-=======
-			cout << "Enter Default Admin Username and Password" << endl;
->>>>>>> Stashed changes
 
+			cout << "Enter Default Admin Username and Password" << endl;
 			cout << "\nUsername: ";
 			cin >> AdminUser;
 			cout << "Password: ";
@@ -150,8 +148,7 @@ int main() {
                                     break;
                                 }
 
-                        }
-
+                            }
 
                         case 0:
                             cout << "===================================" << endl;
@@ -173,6 +170,54 @@ int main() {
             }
 
 			break;
+
+        case 2:
+			cout << "===================================" << endl;
+            cout << endl;
+            cout << "Register before logging in" << endl;
+
+            admn.registerUser();
+
+
+            while (userchoice != 0){
+
+            cout << "===================================" << endl;
+            cout << endl;
+            cout << "Welcome! User" << endl;
+            cout << "\nWhat do you want to do? "<< endl;
+            cout << "\n [1] View List of Theaters & Venues" ;
+            cout << "\n [2] View Movie Info and Schedules" ;
+            cout << "\n [3] Buy Ticket" ;
+            cout << "\n [0] Logout" ;
+            cout << "\n\n Enter command Number: ";
+            cin >> userchoice;
+            cout <<  "\n";
+
+            cin.clear();
+            fflush(stdin);
+
+                switch (userchoice){
+
+                    case 1:
+                        admn.viewVenue();
+                        break;
+
+                    case 2:
+                        admn.viewMovieSchedule();
+                        break;
+
+                    case 3:
+                        admn.buyTicket();
+                        break;
+
+                    case 0:
+                        cout << "===================================" << endl;
+                        cout << endl;
+                        cout << "Thank you for using our system!\n";
+                        break;
+                }
+
+            }
 
 	}
 
