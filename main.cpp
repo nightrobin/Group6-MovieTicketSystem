@@ -146,6 +146,7 @@ int main() {
                                     cout << endl;
                                     cout << "Thank you for using our system!\n";
                                     break;
+                                    return 0;
                                 }
 
                             }
