@@ -287,12 +287,13 @@ void ADMINCONTROL :: buyTicket(){
     cout << endl;
 
     cout << "\n\nSelect Seat from the Matrix Above: ";
-    cin >> seatChoice;
+    getline (cin, seatChoice);
 
     cin.clear();
     fflush(stdin);
 
     cout << endl;
+
 
     cout << "SCHEDULES\n\n";
 
